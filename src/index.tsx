@@ -5,10 +5,12 @@ import { store } from './app/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LandingPage from './pages/landingPage/LandingPage';
+import { CssBaseline } from '@material-ui/core';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      <CssBaseline />
       <App>
         <Router>
           <Switch>
