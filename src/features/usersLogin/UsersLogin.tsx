@@ -7,7 +7,7 @@ import {
   TextField,
 } from '@material-ui/core';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { login, message } from './usersLoginSlice';
+import { login } from './usersLoginSlice';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -33,7 +33,7 @@ const useStyles = makeStyles(() =>
 const UsersLogin = () => {
   const classes = useStyles();
   const dispatch = useAppDispatch();
-  const info = useAppSelector((state) => state.users.message);
+  // const info = useAppSelector((state) => state.users.message);
   const user = useAppSelector((state) => state.users.activeUser);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
