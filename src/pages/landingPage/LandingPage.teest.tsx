@@ -1,7 +1,7 @@
 import React from 'react';
 import LandingPage from './LandingPage';
 
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 describe('Landing page component', () => {
   render(<LandingPage />);
