@@ -24,6 +24,7 @@ const LandingPage = () => {
   const showLoginForm = useAppSelector((state) => state.users.loginForm);
   return (
     <Grid
+      id="landingpage"
       className={classes.root}
       item
       container
