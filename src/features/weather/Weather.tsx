@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { fetchWeather } from './weatherSlice';
@@ -7,6 +8,7 @@ const Weather = () => {
   const { feels_like, humidity } = weather;
 
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     dispatch(fetchWeather());
   }, []);
