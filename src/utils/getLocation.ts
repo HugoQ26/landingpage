@@ -10,6 +10,8 @@ export const getPreciseLocation = async (): Promise<
       return data;
     }
   } catch (err) {
+    console.log('get location arror ', err);
+
     return 'We get some error';
   }
   return 'Sucess';
@@ -23,7 +25,9 @@ function coords(): Promise<[number, number]> {
         resolve([latitude, longitude]);
       },
       (err) => {
-        reject('Rejected');
+        console.log('fuction coords error');
+
+        reject({ message: 'rejected', err: err });
       },
       options,
     );

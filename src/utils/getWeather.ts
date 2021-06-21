@@ -15,6 +15,6 @@ export const getWeatherApi = async () => {
       return weather.data;
     }
   } catch (error) {
-    console.log('get weather error');
+    console.log('get weather error', error);
   }
 };

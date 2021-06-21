@@ -56,8 +56,12 @@ const initialState: InitialState = {
 export const fetchWeather = createAsyncThunk(
   'weather/fetchbycoords',
   async () => {
-    const response = await getWeatherApi();
-    return response;
+    try {
+      const response = await getWeatherApi();
+      return response;
+    } catch (error) {
+      console.log('fetchweather slice error', error);
+    }
   },
 );
 
@@ -68,6 +72,9 @@ const weatherSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchWeather.fulfilled, (state, action) => {
       state.weather = action.payload;
+    });
+    builder.addCase(fetchWeather.rejected, (state, action) => {
+      console.log('builder addCase erprr');
     });
   },
 });
