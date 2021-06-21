@@ -40,7 +40,7 @@ const TimeAndDate = (props) => {
 
   return (
     <Typography className={classes.root} variant="h1">
-      {`${weekday} ${hour}:${minutes}:${seconds}, , ${process.env.test}`}
+      {`${weekday} ${hour}:${minutes}:${seconds}`}
     </Typography>
   );
 };
