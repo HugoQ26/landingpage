@@ -1,11 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
 import usersReducer from '../features/usersLogin/usersLoginSlice';
+import weatherReducer from '../features/weather/weatherSlice';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     users: usersReducer,
+    weather: weatherReducer,
   },
 });
 
