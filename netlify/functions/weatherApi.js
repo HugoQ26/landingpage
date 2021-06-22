@@ -4,9 +4,11 @@ exports.handler = async function (event, context) {
   try {
     const apiCall = `http://api.openweathermap.org/data/2.5/weather?q=Opole&units=metric&lang=pl&appid=${process.env.WEATHER}`;
     console.log(apiCall);
+    console.log('apiCalaaaaaaaaaaaaaaaaal');
     const weather = await axios.get(apiCall);
-
-    return weather.data;
+    console.log('🚀 ~ file: weatherApi.js ~ line 9 ~ weather', weather);
+    // return JSON.stringify(weather.data);
+    return JSON.stringify({ martin: 'marcin' });
   } catch (error) {
     console.log('get weather error', error);
   }
