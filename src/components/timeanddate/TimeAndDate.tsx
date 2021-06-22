@@ -17,7 +17,7 @@ const useStyles = makeStyles(() =>
     root: {
       cursor: 'pointer',
       fontWeight: 'bold',
-      fontSize: '7vw',
+      fontSize: '2rem',
       position: 'absolute',
       top: '10px',
     },
@@ -37,11 +37,11 @@ const TimeAndDate = (props) => {
       setDate(new Date());
     }, 1000);
   }, []);
+
   return (
-    <Typography
-      className={classes.root}
-      variant="h1"
-    >{`${weekday} ${hour}:${minutes}:${seconds}`}</Typography>
+    <Typography className={classes.root} variant="h1">
+      {`${weekday} ${hour}:${minutes}:${seconds}`}
+    </Typography>
   );
 };
 
