@@ -1,43 +1,16 @@
 import React, { SyntheticEvent, useState, ChangeEvent } from 'react';
-import {
-  Grid,
-  Button,
-  makeStyles,
-  createStyles,
-  TextField,
-} from '@material-ui/core';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { Grid, Button, TextField } from '@material-ui/core';
+import { useAppDispatch } from '../../app/hooks';
 import { login } from './usersLoginSlice';
-
-const useStyles = makeStyles(() =>
-  createStyles({
-    root: {
-      borderRadius: '5px',
-      width: '300px',
-      backgroundColor: 'rgba(255, 255, 255, 0.8)',
-      paddingTop: '20px',
-      paddingBottom: '15px',
-    },
-    input: {
-      width: '80%',
-      marginBottom: '20px',
-    },
-    form: {
-      display: 'flex',
-      flexFlow: 'row wrap',
-      justifyContent: 'center',
-    },
-  }),
-);
+import { useStyles } from './usersLogin.style';
 
 const UsersLogin = () => {
   const classes = useStyles();
   const dispatch = useAppDispatch();
   // const info = useAppSelector((state) => state.users.message);
-  const user = useAppSelector((state) => state.users.activeUser);
+  // const user = useAppSelector((state) => state.users.activeUser);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  console.log(user);
 
   const onFormSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
